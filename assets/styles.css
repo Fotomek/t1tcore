@@ -235,17 +235,46 @@ a.brand-kicker { text-decoration: none; }
 }
 
 .hero-visual {
+  position: relative;
   flex: 1 1 auto;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
   min-height: clamp(8.5rem, 28vh, 18rem);
   margin: 0 calc(var(--pad) * -0.05);
+  touch-action: pan-y;
+  cursor: ew-resize;
 }
 
 .hero-canvas {
   width: 100%;
   height: clamp(8.5rem, 28vh, 18rem);
   pointer-events: none;
+  touch-action: none;
+}
+
+.hero-hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.15rem;
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  pointer-events: none;
+  transition: opacity 0.45s var(--ease);
+}
+
+.hero-hint.is-gone {
+  opacity: 0;
+}
+
+html.is-reduced .hero-hint {
+  display: none;
 }
 
 .hero-copy {
@@ -329,9 +358,49 @@ a.brand-kicker { text-decoration: none; }
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 1rem 2rem;
+  gap: 1rem 1.25rem;
   margin-top: auto;
   padding-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sound-dock {
+  flex: 0 0 auto;
+}
+
+.sound-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding: 0.55rem 0.95rem;
+  box-sizing: border-box;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--fg);
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.sound-btn:hover,
+.sound-btn:focus-visible {
+  background: var(--fg);
+  color: var(--bg);
+  outline: none;
+}
+
+.sound-btn.is-soon {
+  opacity: 0.7;
+}
+
+#brand-audio {
+  display: none;
 }
 
 .hero-name {
@@ -449,17 +518,61 @@ main {
   margin-bottom: 1.1rem;
 }
 
+.example-hint {
+  margin: 0 0 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
 .example-row {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem;
+  width: 100%;
+  min-height: 2.75rem;
   padding: 0.7rem 0;
+  font-family: inherit;
   font-size: clamp(0.92rem, 2vw, 1.05rem);
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  text-align: left;
+  color: var(--fg);
+  background: transparent;
+  border: 0;
   border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.example-row:focus-visible {
+  outline: 1px solid var(--fg);
+  outline-offset: 3px;
+}
+
+.example-row .val-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  min-width: 3.2rem;
+  justify-content: flex-end;
+}
+
+.example-row .val-tag {
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+
+.example-row.is-revealed .val-tag {
+  opacity: 1;
 }
 
 .example-row .val {
@@ -468,6 +581,86 @@ main {
   font-weight: 800;
   font-size: 1.45em;
   text-transform: none;
+  min-width: 1.6em;
+  text-align: right;
+}
+
+/* --- X Karte, statisch, ohne Embed --- */
+
+.x-block .section-inner {
+  max-width: 36rem;
+}
+
+.x-card {
+  margin-top: 1.35rem;
+  padding: 1.35rem 1.25rem 1.25rem;
+  border: 1px solid var(--line);
+}
+
+.x-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+}
+
+.x-card-who {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.x-card-who:hover {
+  opacity: 0.7;
+}
+
+.x-card-meta time {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.x-card-text {
+  white-space: pre-wrap;
+  font-size: 0.98rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+}
+
+.x-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 0.1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--fg);
+}
+
+.x-card-link:hover {
+  opacity: 0.7;
+}
+
+.x-card-note {
+  margin-top: 1rem;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  max-width: 32rem;
 }
 
 /* --- CTA --- */

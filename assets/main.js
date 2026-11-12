@@ -51,7 +51,22 @@
       "legal.imp.body": "Diese Seite ist ein Platzhalter. Angaben zum Impressum folgen.",
       "legal.dat.title": "Datenschutz",
       "legal.dat.body": "Diese Seite ist ein Platzhalter. Angaben zum Datenschutz folgen.",
-      "legal.back": "Zurück zur Seite"
+      "legal.back": "Zurück zur Seite",
+      "hero.hint": "Wischen oder scrollen",
+      "score.hint": "Tippen für ein Beispiel",
+      "score.hint1": "VERTRAUEN, Tippen für ein Beispiel",
+      "score.hint2": "RELEVANZ, Tippen für ein Beispiel",
+      "score.hint3": "ECHT, Tippen für ein Beispiel",
+      "score.aria1": "VERTRAUEN, Beispiel 80",
+      "score.aria2": "RELEVANZ, Beispiel 70",
+      "score.aria3": "ECHT, Beispiel 90",
+      "xpost.label": "AKTUELL AUF X",
+      "xpost.read": "Auf X lesen",
+      "xpost.note": "Ohne X-Skript. Der Text liegt auf dieser Seite. Der Link führt zu X.",
+      "sound.start": "Tippen zum Start",
+      "sound.mute": "Stumm",
+      "sound.on": "Ton an",
+      "sound.soon": "Ton folgt bald."
     },
     en: {
       "meta.title": "T1T CORE · Signal over Noise",
@@ -97,7 +112,22 @@
       "legal.imp.body": "This page is a placeholder. Legal details will follow.",
       "legal.dat.title": "Privacy",
       "legal.dat.body": "This page is a placeholder. Privacy details will follow.",
-      "legal.back": "Back to the page"
+      "legal.back": "Back to the page",
+      "hero.hint": "Swipe or scroll",
+      "score.hint": "Tap for an example",
+      "score.hint1": "TRUST, tap for an example",
+      "score.hint2": "RELEVANCE, tap for an example",
+      "score.hint3": "REAL, tap for an example",
+      "score.aria1": "TRUST, example 80",
+      "score.aria2": "RELEVANCE, example 70",
+      "score.aria3": "REAL, example 90",
+      "xpost.label": "LATEST ON X",
+      "xpost.read": "Read on X",
+      "xpost.note": "No X script. The text lives on this page. The link leads to X.",
+      "sound.start": "Tap to start",
+      "sound.mute": "Mute",
+      "sound.on": "Sound on",
+      "sound.soon": "Sound coming soon."
     }
   };
 
@@ -210,6 +240,9 @@
       buttons[b].classList.toggle("is-active", isActive);
       buttons[b].setAttribute("aria-pressed", isActive ? "true" : "false");
     }
+
+    refreshScoreAria(lang);
+    refreshSoundLabel(lang);
   }
 
 
@@ -319,6 +352,8 @@
 
   function startHero() {
     var canvas = document.querySelector(".hero-canvas");
+    var visual = document.getElementById("hero-visual") || document.querySelector(".hero-visual");
+    var hint = document.querySelector(".hero-hint");
     if (!canvas) {
       document.documentElement.classList.add("is-hero-done");
       return;
@@ -330,15 +365,18 @@
     var cssW = 0;
     var cssH = 0;
     var dpr = 1;
-    var progress = reducedMotion() ? 1 : 0;
-    var running = true;
-    var started = false;
-    var t0 = 0;
-    var duration = 2100;
+    var progress = 0;
+    var held = 0;
+    var useHeld = false;
+    var touching = false;
+    var startX = 0;
+    var startY = 0;
+    var startP = 0;
+    var scheduled = false;
 
     function resize() {
       dpr = Math.min(2, window.devicePixelRatio || 1);
-      cssW = canvas.clientWidth || canvas.parentElement.clientWidth || 1;
+      cssW = canvas.clientWidth || (canvas.parentElement && canvas.parentElement.clientWidth) || 1;
       cssH = canvas.clientHeight || 1;
       canvas.width = Math.floor(cssW * dpr);
       canvas.height = Math.floor(cssH * dpr);
@@ -352,7 +390,6 @@
       var maxAmp = cssH * 0.52;
       var lineEnd = cssW * (0.12 + 0.88 * Math.min(1, p * 1.15));
 
-      /* Linie zuerst: links vom Rauschen überdeckt, rechts sauber. */
       ctx.strokeStyle = "#ffffff";
       ctx.lineWidth = Math.max(1, 1.15);
       ctx.lineCap = "butt";
@@ -382,41 +419,276 @@
       }
     }
 
-    function frame(now) {
-      if (!running) return;
-      if (!started) {
-        started = true;
-        t0 = now;
+    function scrollProgress() {
+      var hero = document.querySelector(".hero");
+      var h = (hero && hero.offsetHeight) || window.innerHeight || 1;
+      return Math.max(0, Math.min(1, window.scrollY / (h * 0.58)));
+    }
+
+    function currentP() {
+      if (reducedMotion()) return 1;
+      if (touching || useHeld) {
+        return Math.max(0, Math.min(1, held));
       }
-      var t = Math.min(1, (now - t0) / duration);
-      var eased = 1 - Math.pow(1 - t, 3.2);
-      progress = eased;
+      return scrollProgress();
+    }
+
+    function paint() {
+      scheduled = false;
+      progress = currentP();
       draw(progress);
-      if (t < 1) {
-        requestAnimationFrame(frame);
-      } else {
-        progress = 1;
-        draw(1);
-        document.documentElement.classList.add("is-hero-done");
-        running = false;
+      document.documentElement.classList.toggle("is-hero-done", progress >= 0.995);
+      if (hint) hint.classList.toggle("is-gone", progress > 0.12);
+    }
+
+    function requestPaint() {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(paint);
+    }
+
+    function onScroll() {
+      if (touching) return;
+      if (useHeld) {
+        var s = scrollProgress();
+        /* Scroll übernimmt, sobald sich die Seite bewegt. */
+        if (Math.abs(s - held) > 0.02) useHeld = false;
       }
+      requestPaint();
+    }
+
+    function pointerPos(ev) {
+      if (ev.touches && ev.touches[0]) {
+        return { x: ev.touches[0].clientX, y: ev.touches[0].clientY };
+      }
+      return { x: ev.clientX, y: ev.clientY };
+    }
+
+    function onDown(ev) {
+      if (reducedMotion()) return;
+      var pt = pointerPos(ev);
+      touching = true;
+      useHeld = true;
+      startX = pt.x;
+      startY = pt.y;
+      startP = currentP();
+      held = startP;
+    }
+
+    function onMove(ev) {
+      if (!touching) return;
+      var pt = pointerPos(ev);
+      var dx = pt.x - startX;
+      var dy = startY - pt.y; /* Finger nach oben: Fortschritt */
+      var w = cssW || window.innerWidth || 1;
+      var h = cssH || 160;
+      var fromX = dx / (w * 0.5);
+      var fromY = dy / (h * 0.85);
+      var delta;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 8) {
+        delta = fromX;
+        if (ev.cancelable) ev.preventDefault();
+      } else {
+        delta = fromY;
+      }
+      held = Math.max(0, Math.min(1, startP + delta));
+      requestPaint();
+    }
+
+    function onUp() {
+      if (!touching) return;
+      touching = false;
+      useHeld = true;
+      held = Math.max(0, Math.min(1, held));
+      requestPaint();
     }
 
     resize();
     window.addEventListener("resize", function () {
       resize();
-      draw(progress);
+      requestPaint();
     });
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     if (reducedMotion()) {
+      document.documentElement.classList.add("is-reduced");
       progress = 1;
       draw(1);
       document.documentElement.classList.add("is-hero-done");
+      if (hint) hint.classList.add("is-gone");
       return;
     }
 
+    if (visual) {
+      visual.addEventListener("pointerdown", function (ev) {
+        if (ev.pointerType === "mouse" && ev.button !== 0) return;
+        try { visual.setPointerCapture(ev.pointerId); } catch (e) {}
+        onDown(ev);
+      });
+      visual.addEventListener("pointermove", onMove, { passive: false });
+      visual.addEventListener("pointerup", onUp);
+      visual.addEventListener("pointercancel", onUp);
+    }
+
     draw(0);
-    requestAnimationFrame(frame);
+    requestPaint();
+  }
+
+  /* --- SCORE Teaser: Tippen zeigt Beispielwert --- */
+
+  var scoreRevealed = [false, false, false];
+  var scoreAnims = [];
+
+  function refreshScoreAria(lang) {
+    var dict = COPY[lang] || COPY.de;
+    var rows = document.querySelectorAll(".example-row");
+    for (var i = 0; i < rows.length; i++) {
+      var key = scoreRevealed[i] ? "score.aria" + (i + 1) : "score.hint" + (i + 1);
+      if (dict[key]) rows[i].setAttribute("aria-label", dict[key]);
+    }
+  }
+
+  function animateScore(el, target, immediate) {
+    var num = el.querySelector("[data-score-num]");
+    if (!num) return;
+    if (immediate || reducedMotion()) {
+      num.textContent = String(target);
+      return;
+    }
+    var start = 0;
+    var t0 = null;
+    var dur = 820;
+    function step(now) {
+      if (t0 == null) t0 = now;
+      var t = Math.min(1, (now - t0) / dur);
+      var eased = 1 - Math.pow(1 - t, 3);
+      num.textContent = String(Math.round(start + (target - start) * eased));
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function initScore() {
+    var rows = document.querySelectorAll(".example-row[data-score-val]");
+    for (var i = 0; i < rows.length; i++) {
+      (function (row, idx) {
+        row.addEventListener("click", function () {
+          var val = parseInt(row.getAttribute("data-score-val"), 10);
+          if (!val) return;
+          scoreRevealed[idx] = true;
+          row.classList.add("is-revealed");
+          animateScore(row, val, false);
+          refreshScoreAria(document.documentElement.getAttribute("data-lang") || "de");
+        });
+      })(rows[i], i);
+    }
+    refreshScoreAria(document.documentElement.getAttribute("data-lang") || "de");
+  }
+
+  /* --- Brand Sound A: nur nach Tipp, OGG als Fallback --- */
+
+  var sound = {
+    audio: null,
+    state: "idle" /* idle | playing | muted | soon */
+  };
+
+  function refreshSoundLabel(lang) {
+    var btn = document.getElementById("sound-btn");
+    if (!btn) return;
+    var dict = COPY[lang || document.documentElement.getAttribute("data-lang") || "de"] || COPY.de;
+    var key = "sound.start";
+    if (sound.state === "soon") key = "sound.soon";
+    else if (sound.state === "playing") key = "sound.mute";
+    else if (sound.state === "muted") key = "sound.on";
+    btn.textContent = dict[key] || dict["sound.start"];
+    btn.classList.toggle("is-soon", sound.state === "soon");
+    btn.setAttribute("aria-pressed", sound.state === "playing" ? "true" : "false");
+  }
+
+  function initSound() {
+    var btn = document.getElementById("sound-btn");
+    var audio = document.getElementById("brand-audio");
+    if (!btn || !audio) return;
+    sound.audio = audio;
+
+    /* Kurzer Start-Ton (ca. 2,8 s), kein Loop. Auch bei reduced-motion kein Autoplay. */
+    audio.loop = false;
+    audio.preload = "none";
+
+    audio.addEventListener("ended", function () {
+      sound.state = "idle";
+      try { audio.currentTime = 0; } catch (e) {}
+      refreshSoundLabel();
+    });
+
+    btn.addEventListener("click", function () {
+      if (sound.state === "playing") {
+        audio.pause();
+        sound.state = "muted";
+        refreshSoundLabel();
+        return;
+      }
+      if (sound.state === "muted") {
+        audio.play().then(function () {
+          sound.state = "playing";
+          refreshSoundLabel();
+        }).catch(function () {
+          sound.state = "soon";
+          refreshSoundLabel();
+        });
+        return;
+      }
+      /* idle oder soon: nur nach diesem Tipp starten, von vorn. */
+      try { audio.currentTime = 0; } catch (e) {}
+      audio.play().then(function () {
+        sound.state = "playing";
+        refreshSoundLabel();
+      }).catch(function () {
+        sound.state = "soon";
+        refreshSoundLabel();
+      });
+    });
+
+    refreshSoundLabel();
+  }
+
+  /* --- Neuester X-Post: lokale Karte, fetch posts.json wenn möglich --- */
+
+  function fillXCard(data) {
+    if (!data || !data.post) return;
+    var card = document.getElementById("x-card");
+    if (!card) return;
+    var post = data.post;
+    var acc = data.account || {};
+    var who = card.querySelector(".x-card-who");
+    var time = card.querySelector("time");
+    var text = card.querySelector(".x-card-text");
+    var link = card.querySelector(".x-card-link");
+    if (who && acc.url) {
+      who.href = acc.url;
+      who.textContent = acc.username ? "@" + acc.username : who.textContent;
+    }
+    if (time) {
+      if (post.created_at) time.setAttribute("datetime", post.created_at);
+      if (post.created_at_berlin) time.textContent = post.created_at_berlin;
+    }
+    if (text && post.text) text.textContent = post.text;
+    if (link && post.url) link.href = post.url;
+  }
+
+  function initXCard() {
+    var inline = document.getElementById("t1t-posts");
+    if (inline && inline.textContent) {
+      try {
+        fillXCard(JSON.parse(inline.textContent));
+      } catch (e) {}
+    }
+    try {
+      fetch("assets/posts.json", { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) { if (data) fillXCard(data); })
+        .catch(function () {});
+    } catch (e) {}
   }
 
   document.documentElement.classList.remove("no-js");
@@ -425,9 +697,16 @@
     document.fonts.ready.then(fitClaim);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", startHero);
-  } else {
+  function boot() {
     startHero();
+    initScore();
+    initSound();
+    initXCard();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
   }
 })();

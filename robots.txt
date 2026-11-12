@@ -1,5 +1,5 @@
 # T1T Core. Basis vorerst https://fotomek.github.io/t1tcore/
-# Umstellung auf t1tcore.com: Sitemap- und Host-Angaben anpassen, siehe REPO-SETUP.md.
+# Umstellung auf t1tcore.com: Sitemap- und Host-Angaben anpassen.
 User-agent: *
 Allow: /
 

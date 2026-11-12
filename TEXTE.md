@@ -54,6 +54,15 @@ X-Kanal, sichtbar kurz: x.com/T1TCORE.
 | Abschnitt Ort | RAUM | REGION |
 | Ort Satz | Für Unternehmen, Selbstständige und Marken im Raum Deggendorf. | For businesses, independent professionals and brands in the Deggendorf region. |
 | Ort Zeile | Gestartet in Deggendorf. Gedacht für die Welt. | Started in Deggendorf. Meant for the world. |
+| Hero Hinweis | Wischen oder scrollen | Swipe or scroll |
+| SCORE Hinweis | Tippen für ein Beispiel | Tap for an example |
+| X Abschnitt | AKTUELL AUF X | LATEST ON X |
+| X Link | Auf X lesen | Read on X |
+| X Hinweis | Ohne X-Skript. Der Text liegt auf dieser Seite. Der Link führt zu X. | No X script. The text lives on this page. The link leads to X. |
+| Ton Start | Tippen zum Start | Tap to start |
+| Ton Stumm | Stumm | Mute |
+| Ton an | Ton an | Sound on |
+| Ton folgt | Ton folgt bald. | Sound coming soon. |
 | CTA Knopf | Kontakt über X | Contact on X |
 | CTA Satz | Ein kurzes Schreiben reicht. | A short message is enough. |
 | Fuß Initiative | Initiative von Thomas Malyska | An initiative by Thomas Malyska |
@@ -67,3 +76,13 @@ X-Kanal, sichtbar kurz: x.com/T1TCORE.
 
 Kontakt auf der Startseite nur über X: https://x.com/T1TCORE (Button „Kontakt über X“ / „Contact on X“). E-Mail bleibt gesetzlich im Impressum (DDG § 5) und für Datenschutzanfragen.
 Og-Bild: assets/og-great-t1t-reset.jpg (Kopie des Plakats).
+
+## Vorschau v2 (12.11.2026, nur lokal, nicht gepusht)
+
+Hero: Rauschen wird zur Linie durch Wischen (Touch) und Scrollen. Bei prefers-reduced-motion sofort der Endzustand, ohne Bewegung.
+
+SCORE: Die Werte 80, 70 und 90 erscheinen erst nach einem Tipp auf VERTRAUEN, RELEVANZ, ECHT (EN: TRUST, RELEVANCE, REAL), jeweils animiert und mit dem Wort Beispiel / Example gekennzeichnet.
+
+X: Der neueste Post von @T1TCORE steht in assets/posts.json und als statische Karte auf der Seite. Kein Embed-Skript, kein Tracking. Aktualisierung manuell oder per Routine. Stand 12.11.2026, 13:37 Berlin: https://x.com/T1TCORE/status/2120858525182447825
+
+Ton: Brand Sound A, gewählt von Thomas am 12.11.2026. Dateien assets/brand.mp3 und assets/brand.ogg (Fallback). Button „Tippen zum Start“ / „Tap to start“, danach „Stumm“ / „Mute“. Spielt nur nach Tipp, kein Loop, kein Autoplay. Bei prefers-reduced-motion ebenfalls nur nach Tipp, ohne Loop.
