@@ -1,0 +1,16 @@
+{
+  "name": "T1T Core",
+  "short_name": "T1T Core",
+  "description": "T1T CORE · Signal statt Rauschen. Great T1T RESET.",
+  "start_url": "/t1tcore/",
+  "scope": "/t1tcore/",
+  "display": "browser",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "de",
+  "icons": [
+    { "src": "favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
