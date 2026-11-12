@@ -40,9 +40,8 @@
       "place.label": "RAUM",
       "place.body": "Für Unternehmen, Selbstständige und Marken im Raum Deggendorf.",
       "place.line": "Gestartet in Deggendorf. Gedacht für die Welt.",
-      "cta.button": "Audit anfragen",
+      "cta.button": "Kontakt über X",
       "cta.note": "Ein kurzes Schreiben reicht.",
-      "cta.subject": "Audit anfragen · T1T Core",
       "footer.init": "Initiative von Thomas Malyska",
       "footer.foto": "dargestellt von Fotomek",
       "footer.imp": "Impressum",
@@ -87,9 +86,8 @@
       "place.label": "REGION",
       "place.body": "For businesses, independent professionals and brands in the Deggendorf\u00A0region.",
       "place.line": "Started in Deggendorf. Meant for the world.",
-      "cta.button": "Request an audit",
+      "cta.button": "Contact on X",
       "cta.note": "A short message is enough.",
-      "cta.subject": "Request an audit · T1T Core",
       "footer.init": "An initiative by Thomas Malyska",
       "footer.foto": "rendered by Fotomek",
       "footer.imp": "Impressum",
@@ -103,8 +101,7 @@
     }
   };
 
-  /* Kontaktadresse thomas@malyska.de, von Thomas am 12.11.2026 bestätigt. */
-  var MAIL = "thomas@malyska.de";
+  /* Kontakt auf der Startseite nur über X (https://x.com/T1TCORE). */
 
   function reducedMotion() {
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -205,12 +202,6 @@
     for (var a = 0; a < attrs.length; a++) {
       var ak = attrs[a].getAttribute("data-i18n-aria");
       if (dict[ak] != null) attrs[a].setAttribute("aria-label", dict[ak]);
-    }
-
-    var mail = document.querySelectorAll("[data-mailto]");
-    var subject = encodeURIComponent(dict["cta.subject"]);
-    for (var m = 0; m < mail.length; m++) {
-      mail[m].setAttribute("href", "mailto:" + MAIL + "?subject=" + subject);
     }
 
     var buttons = document.querySelectorAll(".lang button");

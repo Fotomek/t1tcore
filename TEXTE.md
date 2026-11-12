@@ -54,7 +54,7 @@ X-Kanal, sichtbar kurz: x.com/T1TCORE.
 | Abschnitt Ort | RAUM | REGION |
 | Ort Satz | Für Unternehmen, Selbstständige und Marken im Raum Deggendorf. | For businesses, independent professionals and brands in the Deggendorf region. |
 | Ort Zeile | Gestartet in Deggendorf. Gedacht für die Welt. | Started in Deggendorf. Meant for the world. |
-| CTA Knopf | Audit anfragen | Request an audit |
+| CTA Knopf | Kontakt über X | Contact on X |
 | CTA Satz | Ein kurzes Schreiben reicht. | A short message is enough. |
 | Fuß Initiative | Initiative von Thomas Malyska | An initiative by Thomas Malyska |
 | Fuß Fotomek | dargestellt von Fotomek | rendered by Fotomek |
@@ -65,5 +65,5 @@ X-Kanal, sichtbar kurz: x.com/T1TCORE.
 | Datenschutz Text | Diese Seite ist ein Platzhalter. Angaben zum Datenschutz folgen. | This page is a placeholder. Privacy details will follow. |
 | Zurück | Zurück zur Seite | Back to the page |
 
-Kontaktadresse im CTA: thomas@malyska.de (unbestätigt, nur Platzhalter).
+Kontakt auf der Startseite nur über X: https://x.com/T1TCORE (Button „Kontakt über X“ / „Contact on X“). E-Mail bleibt gesetzlich im Impressum (DDG § 5) und für Datenschutzanfragen.
 Og-Bild: assets/og-great-t1t-reset.jpg (Kopie des Plakats).
