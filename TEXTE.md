@@ -99,3 +99,7 @@ X-Karte ab 16.11.2026, 14:40 Berlin: Post „TRUST ist der Filter“ vom 16.11.2
 - Header oben links: Wortmarke T1T CORE weiß auf Schwarz (assets/logo/t1t-core-logo-weiss.svg, aus logo/hq-2026-11-13/T1T-CORE-Logo.svg, viewBox auf die Schrift zugeschnitten, Pfade unverändert). Ersetzt den Text „Great T1T RESET“ im Header. Verweist auf die Startseite in der aktiven Sprache.
 - Alt DE: T1T CORE Logo · zur Startseite. Alt EN: T1T CORE logo · to the homepage.
 - Icons neu aus dem Zeichen T1T: favicon-t1t.svg, favicon-t1t-16/32.png, apple-touch-icon-t1t.png, icon-t1t-192/512.png. Teilen-Bild neu: og-t1t-core-logo-1200x630.jpg. Alte Dateien bleiben im Repo.
+
+## NIKI Prinzip, Sound weg (16.11.2026, Thomas 17:48)
+- Überall NIKI Prinzip / NIKI principle (frühere Schreibweise ersetzt). NIKI: Natürliche Intelligenz und Künstliche Intelligenz im Einklang.
+- Sound ausgeblendet: Button und audio auskommentiert, initSound nicht mehr aufgerufen, Absatz Marken-Ton in Datenschutz auskommentiert. brand.mp3 und brand.ogg nicht mehr im Repo ausgeliefert, lokal unter lp-v3-vorschau-2026-11-16/assets/ erhalten.

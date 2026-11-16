@@ -17,7 +17,7 @@
       "nav.lang": "Sprache",
       "hero.kicker": "Great T1T RESET",
       "offer.label": "TRUST",
-      "offer.line": "TRUST · die ehrliche Analyse deiner Marke nach dem MIKI Prinzip.",
+      "offer.line": "TRUST · die ehrliche Analyse deiner Marke nach dem NIKI Prinzip.",
       "offer.benefit": "Du siehst klar, wo deine Marke Vertrauen schafft und wo sie es verliert. Geprüft von Mensch und Maschine.",
       "offer.button": "Analyse anfragen",
       "dm.text": "Hallo T1T CORE, ich möchte eine TRUST Analyse für meine Marke anfragen. Marke: … Website oder Profil: …",
@@ -28,7 +28,7 @@
       "flow.s2.name": "Analyse",
       "flow.s2.line": "T1T Core prüft deine Marke auf Vertrauen, Relevanz und Echtheit. Signal statt Rauschen.",
       "flow.s3.name": "Ergebnis",
-      "flow.s3.line": "Thomas Malyska prüft jedes Ergebnis persönlich und bespricht es mit dir. Das ist das MIKI Prinzip: Mensch und Maschine, der Mensch hat das letzte Wort.",
+      "flow.s3.line": "Thomas Malyska prüft jedes Ergebnis persönlich und bespricht es mit dir. Das ist das NIKI Prinzip: Mensch und Maschine, der Mensch hat das letzte Wort.",
       "flow.time": "Ehrlicher Zeitplan · Dauer bis zum Ergebnis: 3 Tage. Kein Versprechen, das wir nicht halten.",
       "entry.label": "EINSTIEG",
       "entry.lead": "Klein anfangen. Klar sehen.",
@@ -122,7 +122,7 @@
       "nav.lang": "Language",
       "hero.kicker": "Great T1T RESET",
       "offer.label": "TRUST",
-      "offer.line": "TRUST · the honest analysis of your brand based on the MIKI principle.",
+      "offer.line": "TRUST · the honest analysis of your brand based on the NIKI principle.",
       "offer.benefit": "You see clearly where your brand builds trust and where it loses it. Reviewed by human and machine.",
       "offer.button": "Request analysis",
       "dm.text": "Hi T1T CORE, I would like to request a TRUST analysis for my brand. Brand: … Website or profile: …",
@@ -133,7 +133,7 @@
       "flow.s2.name": "Analysis",
       "flow.s2.line": "T1T Core checks your brand for trust, relevance and what is real. Signal over noise.",
       "flow.s3.name": "Result",
-      "flow.s3.line": "Thomas Malyska personally reviews every result and goes through it with you. That is the MIKI principle: human and machine, the human has the final say.",
+      "flow.s3.line": "Thomas Malyska personally reviews every result and goes through it with you. That is the NIKI principle: human and machine, the human has the final say.",
       "flow.time": "An honest timeline · time to result: 3 days. No promise we cannot keep.",
       "entry.label": "GETTING STARTED",
       "entry.lead": "Start small. See clearly.",
@@ -377,7 +377,7 @@
     syncLangLinks(lang);
     applyXCardLang(lang);
     refreshScoreAria(lang);
-    refreshSoundLabel(lang);
+    // refreshSoundLabel(lang); Sound ausgeblendet 16.11.2026
   }
 
 
@@ -858,7 +858,7 @@
   function boot() {
     startHero();
     initScore();
-    initSound();
+    // initSound(); Sound ausgeblendet 16.11.2026
     initXCard();
   }
 
