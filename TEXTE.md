@@ -94,3 +94,8 @@ X-Karte ab 16.11.2026, 14:40 Berlin: Post „TRUST ist der Filter“ vom 16.11.2
 - EN Claim bleibt wie festgelegt: SIGNAL OVER NOISE (Titel: T1T CORE · Signal over Noise).
 - EN: Impressum heißt Legal notice. X-Karte: Datum 16 Nov 2026, 14:30, englischer Alt-Text, Posttext bleibt deutsch (lang=de) mit Zusammenfassung „In English“: Platforms know your triggers better than you know yourself. But prediction is not understanding. Signal is what serves you, noise is what binds you. TRUST is the filter in between. AI-generated image.
 - Impressum und Datenschutz zeigen im Tab wieder ihren eigenen Titel (vorher Titel der Startseite).
+
+## Logo im Header (16.11.2026, Thomas 14:51)
+- Header oben links: Wortmarke T1T CORE weiß auf Schwarz (assets/logo/t1t-core-logo-weiss.svg, aus logo/hq-2026-11-13/T1T-CORE-Logo.svg, viewBox auf die Schrift zugeschnitten, Pfade unverändert). Ersetzt den Text „Great T1T RESET“ im Header. Verweist auf die Startseite in der aktiven Sprache.
+- Alt DE: T1T CORE Logo · zur Startseite. Alt EN: T1T CORE logo · to the homepage.
+- Icons neu aus dem Zeichen T1T: favicon-t1t.svg, favicon-t1t-16/32.png, apple-touch-icon-t1t.png, icon-t1t-192/512.png. Teilen-Bild neu: og-t1t-core-logo-1200x630.jpg. Alte Dateien bleiben im Repo.

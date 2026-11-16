@@ -145,6 +145,28 @@ a:hover {
 
 a.brand-kicker { text-decoration: none; }
 
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-right: 0.5rem;
+  flex-shrink: 1;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.brand-logo img {
+  display: block;
+  height: clamp(0.95rem, 2.4vw, 1.3rem);
+  width: auto;
+  max-width: 100%;
+}
+
+.brand-logo:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+}
+
 .brand-kicker {
   font-size: clamp(0.78rem, 1.7vw, 0.95rem);
   font-weight: 500;

@@ -10,7 +10,8 @@
     de: {
       "meta.title": "T1T CORE · Signal statt Rauschen",
       "meta.desc": "T1T Core ist die Kern-Check-Instanz. SIGNAL STATT RAUSCHEN. Great T1T RESET. Gestartet in Deggendorf. Gedacht für die Welt.",
-      "meta.ogalt": "Great T1T RESET. SIGNAL STATT RAUSCHEN. KERN VERTRAUEN · RELEVANZ · ECHT. Gestartet in Deggendorf. Gedacht für die Welt.",
+      "meta.ogalt": "T1T CORE Logo, weiß auf Schwarz, mit einer klaren weißen Signallinie.",
+      "brand.logo.alt": "T1T CORE Logo · zur Startseite",
       "nav.lang": "Sprache",
       "hero.kicker": "Great T1T RESET",
       "hero.claim": "SIGNAL STATT RAUSCHEN",
@@ -76,7 +77,8 @@
     en: {
       "meta.title": "T1T CORE · Signal over Noise",
       "meta.desc": "T1T Core is the core check instance. SIGNAL OVER NOISE. Great T1T RESET. Started in Deggendorf. Meant for the world.",
-      "meta.ogalt": "Great T1T RESET. SIGNAL OVER NOISE. CORE TRUST · RELEVANCE · REAL. Started in Deggendorf. Meant for the world.",
+      "meta.ogalt": "T1T CORE logo, white on black, with one clear white signal line.",
+      "brand.logo.alt": "T1T CORE logo · to the homepage",
       "nav.lang": "Language",
       "hero.kicker": "Great T1T RESET",
       "hero.claim": "SIGNAL OVER NOISE",
@@ -275,6 +277,12 @@
     for (var a = 0; a < attrs.length; a++) {
       var ak = attrs[a].getAttribute("data-i18n-aria");
       if (dict[ak] != null) attrs[a].setAttribute("aria-label", dict[ak]);
+    }
+
+    var alts = document.querySelectorAll("[data-i18n-alt]");
+    for (var al = 0; al < alts.length; al++) {
+      var alk = alts[al].getAttribute("data-i18n-alt");
+      if (dict[alk] != null) alts[al].setAttribute("alt", dict[alk]);
     }
 
     var buttons = document.querySelectorAll(".lang button");
