@@ -88,3 +88,9 @@ X: Der neueste Post von @T1TCORE steht in assets/posts.json und als statische Ka
 Ton: Brand Sound A, gewählt von Thomas am 12.11.2026. Dateien assets/brand.mp3 und assets/brand.ogg (Fallback). Button „Tippen zum Start“ / „Tap to start“, danach „Stumm“ / „Mute“. Spielt nur nach Tipp, kein Loop, kein Autoplay. Bei prefers-reduced-motion ebenfalls nur nach Tipp, ohne Loop.
 
 X-Karte ab 16.11.2026, 14:40 Berlin: Post „TRUST ist der Filter“ vom 16.11.2026, 14:30 (https://x.com/T1TCORE/status/2122321446517309802) mit Bild CD-Stil A (assets/x/trust-filter-cd-a-*). Posttext unverändert inklusive „Bild KI-generiert.“ Freigabe Thomas 16.11.2026 14:31.
+
+## Zwei Fassungen DE und EN (16.11.2026, Thomas 14:44 und 14:45)
+- Umschalter DE | EN oben rechts auf allen Seiten, 44px je Taste, aktive Sprache weiß und fett mit gelber Linie (#ffd400). Sprache bleibt per ?lang=en und localStorage, interne Links tragen sie mit.
+- EN Claim bleibt wie festgelegt: SIGNAL OVER NOISE (Titel: T1T CORE · Signal over Noise).
+- EN: Impressum heißt Legal notice. X-Karte: Datum 16 Nov 2026, 14:30, englischer Alt-Text, Posttext bleibt deutsch (lang=de) mit Zusammenfassung „In English“: Platforms know your triggers better than you know yourself. But prediction is not understanding. Signal is what serves you, noise is what binds you. TRUST is the filter in between. AI-generated image.
+- Impressum und Datenschutz zeigen im Tab wieder ihren eigenen Titel (vorher Titel der Startseite).

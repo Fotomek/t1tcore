@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T14:40:00+01:00",
+  "updated_at": "2026-11-16T14:55:00+01:00",
   "note": "Statisch, ohne X-Skript. Manuell oder per Routine aktualisieren. Bild CD-Stil A, Freigabe Thomas 16.11.2026 14:31.",
   "account": {
     "name": "T1T Core",
@@ -19,7 +19,12 @@
       "jpg": "assets/x/trust-filter-cd-a-1080x1440.jpg",
       "width": 1080,
       "height": 1440,
-      "alt": "TRUST IST DER FILTER. Rauschen links verdichtet sich an einer senkrechten Linie zu einer klaren weißen Linie. VERTRAUEN · RELEVANZ · ECHT. T1T Core. Gestartet in Deggendorf. Gedacht für die Welt."
-    }
+      "alt": "TRUST IST DER FILTER. Rauschen links verdichtet sich an einer senkrechten Linie zu einer klaren weißen Linie. VERTRAUEN · RELEVANZ · ECHT. T1T Core. Gestartet in Deggendorf. Gedacht für die Welt.",
+      "alt_de": "TRUST IST DER FILTER. Rauschen links verdichtet sich an einer senkrechten Linie zu einer klaren weißen Linie. VERTRAUEN · RELEVANZ · ECHT. T1T Core. Gestartet in Deggendorf. Gedacht für die Welt.",
+      "alt_en": "Graphic with the headline TRUST is the filter. Noise on the left condenses at a vertical line into one clear white line. Trust · Relevance · Real. T1T Core. Started in Deggendorf. Meant for the world."
+    },
+    "date_de": "16.11.2026, 14:30",
+    "date_en": "16 Nov 2026, 14:30",
+    "summary_en": "Platforms know your triggers better than you know yourself. But prediction is not understanding. Signal is what serves you, noise is what binds you. TRUST is the filter in between. AI-generated image."
   }
 }

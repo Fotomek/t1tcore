@@ -52,6 +52,11 @@
       "legal.dat.title": "Datenschutz",
       "legal.dat.body": "Diese Seite ist ein Platzhalter. Angaben zum Datenschutz folgen.",
       "legal.back": "Zurück zur Seite",
+      "page.imp.title": "Impressum · T1T CORE",
+      "page.imp.desc": "Impressum von T1T Core. Initiative von Thomas Malyska, Fotomek, Deggendorf.",
+      "page.dat.title": "Datenschutz · T1T CORE",
+      "page.dat.desc": "Datenschutz von T1T Core. Keine Cookies, kein Tracking. Hosting über GitHub Pages.",
+      "xpost.summary": "In English",
       "hero.hint": "Wischen oder scrollen",
       "score.hint": "Tippen für ein Beispiel",
       "score.hint1": "VERTRAUEN, Tippen für ein Beispiel",
@@ -105,14 +110,19 @@
       "cta.note": "A short message is enough.",
       "footer.init": "An initiative by Thomas Malyska",
       "footer.foto": "rendered by Fotomek",
-      "footer.imp": "Impressum",
+      "footer.imp": "Legal notice",
       "footer.dat": "Privacy",
       "footer.proto": "Not yet published",
-      "legal.imp.title": "Impressum",
+      "legal.imp.title": "Legal notice",
       "legal.imp.body": "This page is a placeholder. Legal details will follow.",
       "legal.dat.title": "Privacy",
       "legal.dat.body": "This page is a placeholder. Privacy details will follow.",
       "legal.back": "Back to the page",
+      "page.imp.title": "Legal notice · T1T CORE",
+      "page.imp.desc": "Legal notice of T1T Core. An initiative by Thomas Malyska, Fotomek, Deggendorf.",
+      "page.dat.title": "Privacy · T1T CORE",
+      "page.dat.desc": "Privacy notice of T1T Core. No cookies, no tracking. Hosted on GitHub Pages.",
+      "xpost.summary": "In English",
       "hero.hint": "Swipe or scroll",
       "score.hint": "Tap for an example",
       "score.hint1": "TRUST, tap for an example",
@@ -197,20 +207,53 @@
     if (el && value != null) el.setAttribute(attr, value);
   }
 
+  /* Interne Links tragen die Sprache mit. */
+  function syncLangLinks(lang) {
+    var links = document.querySelectorAll("a[href]");
+    for (var i = 0; i < links.length; i++) {
+      var raw = links[i].getAttribute("href");
+      var m = /^(?:\.\/)?(index\.html|impressum\.html|datenschutz\.html)?(\?[^#]*)?(#.*)?$/.exec(raw);
+      if (!m || (!m[1] && !m[3] && !m[2])) continue;
+      if (/^[a-z]+:/i.test(raw)) continue;
+      var file = m[1] || "index.html";
+      links[i].setAttribute("href", file + (lang === "en" ? "?lang=en" : "") + (m[3] || ""));
+    }
+  }
+
+  /* X-Karte: Datum, Alt-Text und englische Zusammenfassung je Sprache. */
+  function applyXCardLang(lang) {
+    var card = document.getElementById("x-card");
+    if (!card) return;
+    var time = card.querySelector("time[data-date-de]");
+    if (time) time.textContent = time.getAttribute(lang === "en" ? "data-date-en" : "data-date-de") || time.textContent;
+    var img = card.querySelector(".x-card-media img[data-alt-de]");
+    if (img) img.setAttribute("alt", img.getAttribute(lang === "en" ? "data-alt-en" : "data-alt-de") || img.alt);
+    var sum = card.querySelector(".x-card-summary");
+    if (sum) {
+      if (lang === "en") sum.removeAttribute("hidden");
+      else sum.setAttribute("hidden", "");
+    }
+  }
+
   function applyLang(lang) {
     var dict = COPY[lang] || COPY.de;
     document.documentElement.lang = lang;
     document.documentElement.setAttribute("data-lang", lang);
-    document.title = dict["meta.title"];
+    var leaf = currentLeaf();
+    var pageKey = leaf === "impressum.html" ? "page.imp" : leaf === "datenschutz.html" ? "page.dat" : null;
+    var title = pageKey ? dict[pageKey + ".title"] : dict["meta.title"];
+    var descText = pageKey ? dict[pageKey + ".desc"] : dict["meta.desc"];
+    document.title = title;
 
     var desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", dict["meta.desc"]);
-    setMeta('meta[property="og:title"]', "content", dict["meta.title"]);
-    setMeta('meta[property="og:description"]', "content", dict["meta.desc"]);
+    if (desc) desc.setAttribute("content", descText);
+    setMeta('meta[property="og:title"]', "content", title);
+    setMeta('meta[property="og:description"]', "content", descText);
+    setMeta('meta[property="og:locale:alternate"]', "content", lang === "en" ? "de_DE" : "en_US");
     setMeta('meta[property="og:image:alt"]', "content", dict["meta.ogalt"]);
     setMeta('meta[property="og:locale"]', "content", lang === "en" ? "en_US" : "de_DE");
-    setMeta('meta[name="twitter:title"]', "content", dict["meta.title"]);
-    setMeta('meta[name="twitter:description"]', "content", dict["meta.desc"]);
+    setMeta('meta[name="twitter:title"]', "content", title);
+    setMeta('meta[name="twitter:description"]', "content", descText);
     syncLangUrl(lang);
 
     var nodes = document.querySelectorAll("[data-i18n]");
@@ -241,6 +284,8 @@
       buttons[b].setAttribute("aria-pressed", isActive ? "true" : "false");
     }
 
+    syncLangLinks(lang);
+    applyXCardLang(lang);
     refreshScoreAria(lang);
     refreshSoundLabel(lang);
   }
@@ -670,7 +715,17 @@
     }
     if (time) {
       if (post.created_at) time.setAttribute("datetime", post.created_at);
-      if (post.created_at_berlin) time.textContent = post.created_at_berlin;
+      if (post.date_de || post.created_at_berlin) time.setAttribute("data-date-de", post.date_de || post.created_at_berlin);
+      if (post.date_en) time.setAttribute("data-date-en", post.date_en);
+    }
+    var sumEl = card.querySelector(".x-card-summary");
+    if (sumEl && post.summary_en) {
+      sumEl.innerHTML = "";
+      var lab = document.createElement("span");
+      lab.className = "x-card-summary-label";
+      lab.textContent = "In English";
+      sumEl.appendChild(lab);
+      sumEl.appendChild(document.createTextNode(" " + post.summary_en));
     }
     if (text && post.text) text.textContent = post.text;
     if (link && post.url) link.href = post.url;
@@ -678,13 +733,15 @@
     var srcEl = card.querySelector(".x-card-media source");
     if (img && post.image) {
       if (post.image.jpg) img.setAttribute("src", post.image.jpg);
-      if (post.image.alt) img.setAttribute("alt", post.image.alt);
+      if (post.image.alt_de || post.image.alt) img.setAttribute("data-alt-de", post.image.alt_de || post.image.alt);
+      if (post.image.alt_en) img.setAttribute("data-alt-en", post.image.alt_en);
       if (srcEl && post.image.webp) {
         var set = post.image.webp + " 1080w";
         if (post.image.webp_small) set = post.image.webp_small + " 720w, " + set;
         srcEl.setAttribute("srcset", set);
       }
     }
+    applyXCardLang(document.documentElement.getAttribute("data-lang") || "de");
   }
 
   function initXCard() {
