@@ -86,3 +86,5 @@ SCORE: Die Werte 80, 70 und 90 erscheinen erst nach einem Tipp auf VERTRAUEN, RE
 X: Der neueste Post von @T1TCORE steht in assets/posts.json und als statische Karte auf der Seite. Kein Embed-Skript, kein Tracking. Aktualisierung manuell oder per Routine. Stand 12.11.2026, 13:37 Berlin: https://x.com/T1TCORE/status/2120858525182447825
 
 Ton: Brand Sound A, gewählt von Thomas am 12.11.2026. Dateien assets/brand.mp3 und assets/brand.ogg (Fallback). Button „Tippen zum Start“ / „Tap to start“, danach „Stumm“ / „Mute“. Spielt nur nach Tipp, kein Loop, kein Autoplay. Bei prefers-reduced-motion ebenfalls nur nach Tipp, ohne Loop.
+
+X-Karte ab 16.11.2026, 14:40 Berlin: Post „TRUST ist der Filter“ vom 16.11.2026, 14:30 (https://x.com/T1TCORE/status/2122321446517309802) mit Bild CD-Stil A (assets/x/trust-filter-cd-a-*). Posttext unverändert inklusive „Bild KI-generiert.“ Freigabe Thomas 16.11.2026 14:31.

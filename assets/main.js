@@ -674,6 +674,17 @@
     }
     if (text && post.text) text.textContent = post.text;
     if (link && post.url) link.href = post.url;
+    var img = card.querySelector(".x-card-media img");
+    var srcEl = card.querySelector(".x-card-media source");
+    if (img && post.image) {
+      if (post.image.jpg) img.setAttribute("src", post.image.jpg);
+      if (post.image.alt) img.setAttribute("alt", post.image.alt);
+      if (srcEl && post.image.webp) {
+        var set = post.image.webp + " 1080w";
+        if (post.image.webp_small) set = post.image.webp_small + " 720w, " + set;
+        srcEl.setAttribute("srcset", set);
+      }
+    }
   }
 
   function initXCard() {

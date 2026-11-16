@@ -626,6 +626,19 @@ main {
   letter-spacing: 0.04em;
 }
 
+.x-card-media {
+  margin: 0 0 1.15rem;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.x-card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+}
+
 .x-card-text {
   white-space: pre-wrap;
   font-size: 0.98rem;
