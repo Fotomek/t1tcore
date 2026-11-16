@@ -1,6 +1,5 @@
-# T1T Core. Basis vorerst https://fotomek.github.io/t1tcore/
-# Umstellung auf t1tcore.com: Sitemap- und Host-Angaben anpassen.
+# T1T Core. Basis https://t1tcore.com/
 User-agent: *
 Allow: /
 
-Sitemap: https://fotomek.github.io/t1tcore/sitemap.xml
+Sitemap: https://t1tcore.com/sitemap.xml

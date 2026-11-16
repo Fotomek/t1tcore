@@ -227,7 +227,7 @@
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
 
-  var BASE_URL = "https://fotomek.github.io/t1tcore/";
+  var BASE_URL = "https://t1tcore.com/";
   /* Umstellung auf t1tcore.com: BASE_URL ändern, siehe REPO-SETUP.md. */
 
   function queryLang() {
