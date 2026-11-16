@@ -1,5 +1,7 @@
 # T1T Core. Basis https://t1tcore.com/
 User-agent: *
 Allow: /
+Disallow: /alt-2026-11-16/
+Disallow: /alternative/
 
 Sitemap: https://t1tcore.com/sitemap.xml

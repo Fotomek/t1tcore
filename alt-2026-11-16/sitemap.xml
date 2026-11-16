@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://t1tcore.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://t1tcore.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://t1tcore.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t1tcore.com/" />
+  </url>
+  <url>
+    <loc>https://t1tcore.com/?lang=en</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://t1tcore.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://t1tcore.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t1tcore.com/" />
+  </url>
+  <url>
+    <loc>https://t1tcore.com/impressum.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://t1tcore.com/impressum.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://t1tcore.com/impressum.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t1tcore.com/impressum.html" />
+  </url>
+  <url>
+    <loc>https://t1tcore.com/datenschutz.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://t1tcore.com/datenschutz.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://t1tcore.com/datenschutz.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://t1tcore.com/datenschutz.html" />
+  </url>
+</urlset>

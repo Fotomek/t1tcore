@@ -1,403 +1,169 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de" class="no-js">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <!-- T1T CORE. Freigabe Thomas 12.11.2026 18:43 Berlin, v2 live.
-         Basis-URL: https://t1tcore.com/
-         Umstellung auf https://t1tcore.com/: CNAME.vorbereitet nicht aktiv. -->
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="color-scheme" content="dark" />
-    <title>T1T CORE · Signal statt Rauschen</title>
-    <meta name="description" content="T1T Core ist die Kern-Check-Instanz. SIGNAL STATT RAUSCHEN. Great T1T RESET. Gestartet in Deggendorf. Gedacht für die Welt." />
-
-    <link rel="canonical" href="https://t1tcore.com/" />
-    <link rel="alternate" hreflang="de" href="https://t1tcore.com/" />
-    <link rel="alternate" hreflang="en" href="https://t1tcore.com/?lang=en" />
-    <link rel="alternate" hreflang="x-default" href="https://t1tcore.com/" />
-
-    <link rel="icon" href="assets/favicon-t1t.svg" type="image/svg+xml" />
-    <link rel="icon" href="assets/favicon-t1t-32.png" type="image/png" sizes="32x32" />
-    <link rel="icon" href="assets/favicon-t1t-16.png" type="image/png" sizes="16x16" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon-t1t.png" sizes="180x180" />
-    <link rel="manifest" href="assets/site.webmanifest" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="T1T Core" />
-    <meta property="og:url" content="https://t1tcore.com/" />
-    <meta property="og:title" content="T1T CORE · Signal statt Rauschen" />
-    <meta property="og:description" content="T1T Core ist die Kern-Check-Instanz. SIGNAL STATT RAUSCHEN. Great T1T RESET. Gestartet in Deggendorf. Gedacht für die Welt." />
-    <meta property="og:image" content="https://t1tcore.com/assets/og-t1t-core-logo-1200x630.jpg" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="T1T CORE Logo, weiß auf Schwarz, mit einer klaren weißen Signallinie." />
-    <meta property="og:locale" content="de_DE" />
-    <meta property="og:locale:alternate" content="en_US" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@T1TCORE" />
-    <meta name="twitter:title" content="T1T CORE · Signal statt Rauschen" />
-    <meta name="twitter:description" content="T1T Core ist die Kern-Check-Instanz. SIGNAL STATT RAUSCHEN. Great T1T RESET. Gestartet in Deggendorf. Gedacht für die Welt." />
-    <meta name="twitter:image" content="https://t1tcore.com/assets/og-t1t-core-logo-1200x630.jpg" />
-
-    <script type="application/ld+json">
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#07090f">
+<meta name="color-scheme" content="dark">
+<title>T1T CORE · Signal statt Rauschen</title>
+<meta name="description" content="T1T CORE macht Vertrauen messbar. TRUST · RELEVANCE · REAL. Die TRUST Analyse nach dem NIKI Prinzip.">
+<link rel="canonical" href="https://t1tcore.com/">
+<link rel="alternate" hreflang="de" href="https://t1tcore.com/">
+<link rel="alternate" hreflang="en" href="https://t1tcore.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://t1tcore.com/">
+<link rel="icon" href="assets/favicon-t1t-16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="T1T Core">
+<meta property="og:url" content="https://t1tcore.com/">
+<meta property="og:title" content="T1T CORE · Signal statt Rauschen">
+<meta property="og:description" content="T1T CORE macht Vertrauen messbar. TRUST · RELEVANCE · REAL. Die TRUST Analyse nach dem NIKI Prinzip.">
+<meta property="og:image" content="https://t1tcore.com/assets/og-t1t-core-logo-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="T1T CORE Logo, weiß auf Schwarz, mit einer klaren weißen Signallinie.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@T1TCORE">
+<meta name="twitter:title" content="T1T CORE · Signal statt Rauschen">
+<meta name="twitter:description" content="T1T CORE macht Vertrauen messbar. TRUST · RELEVANCE · REAL. Die TRUST Analyse nach dem NIKI Prinzip.">
+<meta name="twitter:image" content="https://t1tcore.com/assets/og-t1t-core-logo-1200x630.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://t1tcore.com/#organization",
-          "name": "T1T Core",
-          "url": "https://t1tcore.com/",
-          "logo": "https://t1tcore.com/assets/icon-t1t-512.png",
-          "founder": {
-            "@type": "Person",
-            "name": "Thomas Malyska"
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Deggendorf",
-            "postalCode": "94469",
-            "addressCountry": "DE"
-          },
-          "sameAs": [
-            "https://x.com/T1TCORE"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "url": "https://x.com/T1TCORE",
-            "contactType": "customer service"
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://t1tcore.com/#website",
-          "name": "T1T Core",
-          "url": "https://t1tcore.com/",
-          "inLanguage": ["de", "en"],
-          "publisher": {
-            "@id": "https://t1tcore.com/#organization"
-          }
-        }
-      ]
+      "@type": "Organization",
+      "@id": "https://t1tcore.com/#organization",
+      "name": "T1T Core",
+      "url": "https://t1tcore.com/",
+      "logo": "https://t1tcore.com/assets/icon-t1t-512.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Thomas Malyska"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Deggendorf",
+        "postalCode": "94469",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://x.com/T1TCORE"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "url": "https://x.com/T1TCORE",
+        "contactType": "customer service"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://t1tcore.com/#website",
+      "name": "T1T Core",
+      "url": "https://t1tcore.com/",
+      "inLanguage": ["de", "en"],
+      "publisher": {
+        "@id": "https://t1tcore.com/#organization"
+      }
     }
-    </script>
+  ]
+}
+</script>
+<link rel="icon" href="assets/favicon-t1t.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-t1t-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon-t1t.png">
+<link rel="stylesheet" href="assets/alt.css">
+<script>try{if(new URLSearchParams(location.search).get("lang")==="en")location.replace("en/")}catch(e){}</script>
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="./"><img src="assets/logo/t1t-core-logo-weiss.svg" width="969" height="142" alt="T1T CORE Logo · zur Startseite"></a>
+  <nav class="top-r">
+    <a class="xl" href="https://x.com/T1TCORE" target="_blank" rel="noopener noreferrer" aria-label="@T1TCORE · öffnet X in neuem Tab">@T1TCORE</a>
+    <a class="lang" href="en/" hreflang="en" lang="en" aria-label="English version">EN</a>
+  </nav>
+</header>
+<main>
+<section class="hero">
+  <p class="kicker">TRUST · RELEVANCE · REAL</p>
+  <h1 class="claim"><span>SIGNAL STATT</span> <span class="gold">RAUSCHEN</span></h1>
+  <p class="h-lead">Millionen von KIs können sich irren.</p>
+  <p class="h-sub">Die Menge an Daten ersetzt keine Wahrheit. Wir machen Vertrauen messbar.</p>
+  <a class="btn" href="https://x.com/T1TCORE" target="_blank" rel="noopener noreferrer">Analyse anfragen auf X</a>
+  <p class="note">Kontakt nur über X · @T1TCORE</p>
+</section>
 
-    <link rel="stylesheet" href="assets/styles.css" />
-    <script>
-      (function () {
-        var lang = "de";
-        try {
-          var q = new URLSearchParams(location.search).get("lang");
-          if (q === "en" || q === "de") {
-            lang = q;
-          } else {
-            var l = localStorage.getItem("t1t-lang");
-            if (l === "en" || l === "de") lang = l;
-          }
-        } catch (e) {}
-        document.documentElement.lang = lang;
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.classList.remove("no-js");
-      })();
-    </script>
-  </head>
-  <body>
-    <header class="header">
-      <a class="brand-logo" href="index.html"><img src="assets/logo/t1t-core-logo-weiss.svg" width="969" height="142" alt="T1T CORE Logo · zur Startseite" data-i18n-alt="brand.logo.alt" /></a>
-      <div class="header-right">
-        <a class="x-link" href="https://x.com/T1TCORE" target="_blank" rel="noopener noreferrer me">x.com/T1TCORE</a>
-        <div class="lang" data-i18n-aria="nav.lang" role="group" aria-label="Sprache">
-          <button type="button" data-set-lang="de" class="is-active" aria-pressed="true">DE</button>
-          <span class="lang-sep" aria-hidden="true">|</span>
-          <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
-        </div>
-      </div>
-    </header>
+<section class="sec model">
+  <p class="label">DAS MODELL</p>
+  <h2>Ein Kern. Drei Stufen.</h2>
+  <p class="body">T1T CORE steht in der Mitte. Jede Marke wird auf drei Stufen geprüft.</p>
+  <svg class="model-svg" viewBox="0 0 400 400" role="img" aria-label="Kreismodell: T1T CORE in der Mitte, darum TRUST, RELEVANCE und REAL.">
+  <defs><radialGradient id="g" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#2a2414"/><stop offset="1" stop-color="#07090f"/></radialGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dc9b"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#8a6a25"/></linearGradient></defs>
+  <circle cx="200" cy="200" r="182" class="ring-out"/>
+  <path d="M241.9 53.9 A152 152 0 0 1 347.5 236.8" class="arc"/><path d="M305.6 309.3 A152 152 0 0 1 94.4 309.3" class="arc"/><path d="M52.5 236.8 A152 152 0 0 1 158.1 53.9" class="arc"/>
+  <circle cx="200" cy="200" r="104" fill="url(#g)" class="core"/>
+  <line x1="292.0" y1="200.0" x2="300.0" y2="200.0" class="tick"/><line x1="288.9" y1="223.8" x2="296.6" y2="225.9" class="tick"/><line x1="279.7" y1="246.0" x2="286.6" y2="250.0" class="tick"/><line x1="265.1" y1="265.1" x2="270.7" y2="270.7" class="tick"/><line x1="246.0" y1="279.7" x2="250.0" y2="286.6" class="tick"/><line x1="223.8" y1="288.9" x2="225.9" y2="296.6" class="tick"/><line x1="200.0" y1="292.0" x2="200.0" y2="300.0" class="tick"/><line x1="176.2" y1="288.9" x2="174.1" y2="296.6" class="tick"/><line x1="154.0" y1="279.7" x2="150.0" y2="286.6" class="tick"/><line x1="134.9" y1="265.1" x2="129.3" y2="270.7" class="tick"/><line x1="120.3" y1="246.0" x2="113.4" y2="250.0" class="tick"/><line x1="111.1" y1="223.8" x2="103.4" y2="225.9" class="tick"/><line x1="108.0" y1="200.0" x2="100.0" y2="200.0" class="tick"/><line x1="111.1" y1="176.2" x2="103.4" y2="174.1" class="tick"/><line x1="120.3" y1="154.0" x2="113.4" y2="150.0" class="tick"/><line x1="134.9" y1="134.9" x2="129.3" y2="129.3" class="tick"/><line x1="154.0" y1="120.3" x2="150.0" y2="113.4" class="tick"/><line x1="176.2" y1="111.1" x2="174.1" y2="103.4" class="tick"/><line x1="200.0" y1="108.0" x2="200.0" y2="100.0" class="tick"/><line x1="223.8" y1="111.1" x2="225.9" y2="103.4" class="tick"/><line x1="246.0" y1="120.3" x2="250.0" y2="113.4" class="tick"/><line x1="265.1" y1="134.9" x2="270.7" y2="129.3" class="tick"/><line x1="279.7" y1="154.0" x2="286.6" y2="150.0" class="tick"/><line x1="288.9" y1="176.2" x2="296.6" y2="174.1" class="tick"/>
+  <circle cx="200" cy="200" r="84" class="core-in"/>
+  <text x="200" y="200" text-anchor="middle" class="core-t1">T1T</text>
+  <text x="200" y="232" text-anchor="middle" class="core-t2">CORE</text>
+  <g class="node"><circle cx="200.0" cy="48.0" r="40"/><text x="200.0" y="52.0" class="node-t" text-anchor="middle">TRUST</text></g><g class="node"><circle cx="331.6" cy="276.0" r="40"/><text x="331.6" y="280.0" class="node-t" text-anchor="middle">RELEVANCE</text></g><g class="node"><circle cx="68.4" cy="276.0" r="40"/><text x="68.4" y="280.0" class="node-t" text-anchor="middle">REAL</text></g>
+</svg>
+  <ul class="stages">
+    <li><strong>TRUST</strong><span>Glaubwürdigkeit als Basis.</span></li>
+    <li><strong>RELEVANCE</strong><span>Strategische Gewichtung.</span></li>
+    <li><strong>REAL</strong><span>Substanz schafft Wert.</span></li>
+  </ul>
+</section>
 
-    <section class="hero" id="top">
-      <div class="hero-visual" id="hero-visual">
-        <canvas class="hero-canvas" aria-hidden="true"></canvas>
-        <p class="hero-hint" data-i18n="hero.hint">Wischen oder scrollen</p>
-      </div>
+<section class="sec quote">
+  <p class="label">LEITSATZ</p>
+  <figure class="q">
+    <picture>
+      <source type="image/webp" srcset="assets/personen/thomas-malyska-ceo-hoch-480x600.webp 480w, assets/personen/thomas-malyska-ceo-hoch-670x837.webp 670w" sizes="(min-width: 900px) 320px, 40vw">
+      <img src="assets/personen/thomas-malyska-ceo-hoch-670x837.jpg" width="670" height="837" loading="lazy" decoding="async" alt="Thomas Malyska · CEO T1T CORE">
+    </picture>
+    <blockquote><p>„Vertrauen entsteht nicht durch Rechenleistung.“</p></blockquote>
+    <figcaption>Thomas Malyska · CEO T1T CORE</figcaption>
+  </figure>
+  <div class="q-body"><p>Rechenleistung schafft Antworten.</p><p>Vertrauen entsteht durch Glaubwürdigkeit.</p><p>Wir analysieren. Wir prüfen. Wir hinterfragen.</p></div>
+</section>
 
-      <div class="hero-copy">
-        <h1 class="claim">
-          <span class="visually-hidden" data-i18n="hero.claim">SIGNAL STATT RAUSCHEN</span>
-          <svg class="claim-svg" viewBox="0 0 1000 214" preserveAspectRatio="xMinYMin meet" aria-hidden="true">
-            <text class="claim-l1" x="0" y="92" textLength="1000" lengthAdjust="spacingAndGlyphs">SIGNAL STATT</text>
-            <text class="claim-l2" x="0" y="204" textLength="1000" lengthAdjust="spacingAndGlyphs">RAUSCHEN</text>
-          </svg>
-          <span class="claim-fallback" aria-hidden="true">
-            <span data-i18n="hero.claim1">SIGNAL STATT</span>
-            <span data-i18n="hero.claim2">RAUSCHEN</span>
-          </span>
-        </h1>
-        <p class="kern-line">
-          <span class="kern-tag" data-i18n="kern.label">KERN</span>
-          <span class="kern-stages">
-            <span data-i18n="stage1.name">VERTRAUEN</span>
-            <span class="dot" aria-hidden="true">·</span>
-            <span data-i18n="stage2.name">RELEVANZ</span>
-            <span class="dot" aria-hidden="true">·</span>
-            <span data-i18n="stage3.name">ECHT</span>
-          </span>
-        </p>
-        <div class="offer">
-          <p class="offer-line" data-i18n="offer.line">TRUST · die ehrliche Analyse deiner Marke nach dem NIKI Prinzip.</p>
-          <p class="offer-benefit" data-i18n="offer.benefit">Du siehst klar, wo deine Marke Vertrauen schafft und wo sie es verliert. Geprüft von Mensch und Maschine.</p>
-          <a class="btn btn-accent" data-dm href="https://x.com/messages/compose?recipient_id=2050408646815715328&amp;text=Hallo%20T1T%20CORE%2C%20ich%20m%C3%B6chte%20eine%20TRUST%20Analyse%20f%C3%BCr%20meine%20Marke%20anfragen.%20Marke%3A%20%E2%80%A6%20Website%20oder%20Profil%3A%20%E2%80%A6" target="_blank" rel="noopener noreferrer" data-i18n="offer.button" data-i18n-aria="ask.dmaria" aria-label="Analyse anfragen · öffnet eine Nachricht an @T1TCORE auf X">Analyse anfragen</a>
-        </div>
-      </div>
+<section class="sec flow">
+  <p class="label">TRUST ANALYSE</p>
+  <h2>So funktioniert die TRUST Analyse.</h2>
+  <ol class="steps"><li class="step"><span class="step-n" aria-hidden="true">1</span><div><h3>Analyse</h3><p>Wir prüfen deine Marke. Neutral und objektiv.</p></div></li><li class="step"><span class="step-n" aria-hidden="true">2</span><div><h3>Bewertung</h3><p>Einordnung nach TRUST · RELEVANCE · REAL.</p></div></li><li class="step"><span class="step-n" aria-hidden="true">3</span><div><h3>Insights</h3><p>Stärken, Schwachstellen und Chancen erkennen.</p></div></li><li class="step"><span class="step-n" aria-hidden="true">4</span><div><h3>Empfehlungen</h3><p>Konkrete Maßnahmen für mehr Vertrauen und Wirkung.</p></div></li><li class="step"><span class="step-n" aria-hidden="true">5</span><div><h3>Wachstum</h3><p>Umsetzen. Optimieren. Vertrauen steigern.</p></div></li></ol>
+  <p class="body small">Jedes Ergebnis prüft Thomas Malyska persönlich. Nach dem NIKI Prinzip: Natürliche Intelligenz und Künstliche Intelligenz im Einklang. Der Mensch hat das letzte Wort.</p>
+  <div class="price">
+    <p class="label">TRUST ANALYSE</p>
+    <p class="price-v">190 €</p>
+    <p class="price-s">Einstiegspreis.</p>
+    <p class="price-s">Dauer bis zum Ergebnis: 3 Tage.</p>
+    <a class="btn" href="https://x.com/T1TCORE" target="_blank" rel="noopener noreferrer">Analyse anfragen auf X</a>
+    <p class="tax">Rechnung über Fotomek. Gemäß § 19 UStG wird keine Umsatzsteuer ausgewiesen.</p>
+  </div>
+</section>
 
-      <div class="hero-foot">
-        <p class="hero-name">T1T Core</p>
-        <!-- Sound ausgeblendet (Thomas 16.11.2026 17:48: „Den Sound weglassen.“)
-        <div class="sound-dock">
-          <button type="button" class="sound-btn" id="sound-btn" aria-live="polite" aria-pressed="false" data-i18n="sound.start">Tippen zum Start</button>
-          <audio id="brand-audio" preload="none" playsinline>
-            <source src="assets/brand.mp3" type="audio/mpeg" />
-            <source src="assets/brand.ogg" type="audio/ogg" />
-          </audio>
-        </div>
-        -->
-        <p class="hero-motto" data-i18n="place.line">Gestartet in Deggendorf. Gedacht für die Welt.</p>
-      </div>
-    </section>
+<section class="statement">
+  <p class="st-line">Wir machen Vertrauen messbar.</p>
+  <p class="st-sub">Signal statt Rauschen.</p>
+</section>
 
-    <main>
-      <section class="section" id="kern">
-        <div class="section-inner">
-          <p class="t-label" data-i18n="kern.label">KERN</p>
-          <h2 class="lead" data-i18n="kern.lead">T1T Core ist die Kern‑Check‑Instanz.</h2>
-          <p class="t-body" data-i18n="hero.sub">Alles auf Null. Dann bleibt das Signal.</p>
-          <p class="t-body" data-i18n="kern.body">Wir hören durch das Rauschen. Drei Stufen. Ein Ergebnis: der T1T SCORE.</p>
-
-          <div class="stages">
-            <article class="stage">
-              <h3 class="t-title" data-i18n="stage1.name">VERTRAUEN</h3>
-              <p class="t-body" data-i18n="stage1.line">Hält, was versprochen wird.</p>
-            </article>
-            <article class="stage">
-              <h3 class="t-title" data-i18n="stage2.name">RELEVANZ</h3>
-              <p class="t-body" data-i18n="stage2.line">Trifft, was jetzt gebraucht wird.</p>
-            </article>
-            <article class="stage">
-              <h3 class="t-title" data-i18n="stage3.name">ECHT</h3>
-              <p class="t-body" data-i18n="stage3.line">Stimmt innen und außen überein.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="ablauf">
-        <div class="section-inner">
-          <p class="t-label" data-i18n="flow.label">ABLAUF</p>
-          <h2 class="lead" data-i18n="flow.lead">Drei Schritte. Ehrlich geplant.</h2>
-          <ol class="flow">
-            <li class="flow-step">
-              <span class="flow-num" aria-hidden="true">01</span>
-              <h3 class="t-title" data-i18n="flow.s1.name">Anfrage</h3>
-              <p class="t-body" data-i18n="flow.s1.line">Du schreibst eine kurze Nachricht auf X. Marke und Link reichen.</p>
-            </li>
-            <li class="flow-step">
-              <span class="flow-num" aria-hidden="true">02</span>
-              <h3 class="t-title" data-i18n="flow.s2.name">Analyse</h3>
-              <p class="t-body" data-i18n="flow.s2.line">T1T Core prüft deine Marke auf Vertrauen, Relevanz und Echtheit. Signal statt Rauschen.</p>
-            </li>
-            <li class="flow-step">
-              <span class="flow-num" aria-hidden="true">03</span>
-              <h3 class="t-title" data-i18n="flow.s3.name">Ergebnis</h3>
-              <p class="t-body" data-i18n="flow.s3.line">Thomas Malyska prüft jedes Ergebnis persönlich und bespricht es mit dir. Das ist das NIKI Prinzip: Mensch und Maschine, der Mensch hat das letzte Wort.</p>
-            </li>
-          </ol>
-          <p class="t-body flow-time" data-i18n="flow.time">Ehrlicher Zeitplan · Dauer bis zum Ergebnis: 3 Tage. Kein Versprechen, das wir nicht halten.</p>
-        </div>
-      </section>
-
-      <section class="section" id="einstieg">
-        <div class="section-inner">
-          <p class="t-label" data-i18n="entry.label">EINSTIEG</p>
-          <h2 class="lead" data-i18n="entry.lead">Klein anfangen. Klar sehen.</h2>
-          <p class="t-body entry-price" data-i18n="entry.body">Die TRUST Analyse zum Einstiegspreis von 190 €.</p>
-          <p class="t-body entry-time" data-i18n="entry.time">Dauer bis zum Ergebnis: 3 Tage.</p>
-          <p class="t-body entry-tax" data-i18n="entry.tax">Rechnung über Fotomek. Gemäß § 19 UStG wird keine Umsatzsteuer ausgewiesen.</p>
-          <p class="entry-cta"><a class="btn btn-accent" data-dm href="https://x.com/messages/compose?recipient_id=2050408646815715328&amp;text=Hallo%20T1T%20CORE%2C%20ich%20m%C3%B6chte%20eine%20TRUST%20Analyse%20f%C3%BCr%20meine%20Marke%20anfragen.%20Marke%3A%20%E2%80%A6%20Website%20oder%20Profil%3A%20%E2%80%A6" target="_blank" rel="noopener noreferrer" data-i18n="offer.button" data-i18n-aria="ask.dmaria" aria-label="Analyse anfragen · öffnet eine Nachricht an @T1TCORE auf X">Analyse anfragen</a></p>
-        </div>
-      </section>
-
-      <section class="section" id="wer-prueft">
-        <div class="section-inner">
-          <p class="t-label" data-i18n="founder.label">WER PRÜFT</p>
-          <figure class="founder">
-            <picture>
-              <source media="(min-width: 700px)" type="image/webp" srcset="assets/personen/thomas-malyska-ceo-quer-800x451.webp 800w, assets/personen/thomas-malyska-ceo-quer-1200x677.webp 1200w" sizes="(min-width: 72rem) 72rem, 100vw" />
-              <source media="(min-width: 700px)" srcset="assets/personen/thomas-malyska-ceo-quer-1200x677.jpg" />
-              <source type="image/webp" srcset="assets/personen/thomas-malyska-ceo-hoch-480x600.webp 480w, assets/personen/thomas-malyska-ceo-hoch-670x837.webp 670w" sizes="100vw" />
-              <img src="assets/personen/thomas-malyska-ceo-hoch-670x837.jpg" width="670" height="837" loading="lazy" decoding="async" alt="Thomas Malyska · CEO T1T CORE" />
-            </picture>
-            <figcaption>
-              <span class="founder-name">Thomas Malyska</span>
-              <span class="founder-title">CEO T1T CORE</span>
-            </figcaption>
-          </figure>
-          <!-- Gründersatz ausgeblendet, nicht bestätigt (Thomas 16.11.2026 15:15)
-          <blockquote class="founder-quote">
-            <p data-i18n="founder.quote">„Ich prüfe jedes Ergebnis persönlich. Ehrlich, auch wenn es unbequem ist. Erst dann geht es an dich.“</p>
-            <span class="draft-tag" data-i18n="founder.draft">Entwurf</span>
-          </blockquote>
-          -->
-          <p class="t-body" data-i18n="founder.org">T1T Core ist eine Initiative von Thomas Malyska. Eine Foundation ist in Planung.</p>
-
-          <!-- Kundenstimmen ausgeblendet bis Texte vorliegen (Thomas 16.11.2026 15:15)
-          <div class="voices">
-            <p class="t-label" data-i18n="voices.label">STIMMEN</p>
-            <p class="placeholder" data-i18n="voices.ph1">[PLATZHALTER: Kundenstimme 1, Text folgt]</p>
-            <p class="placeholder" data-i18n="voices.ph2">[PLATZHALTER: Kundenstimme 2, Text folgt]</p>
-          </div>
-          -->
-        </div>
-      </section>
-
-      <section class="section" id="score">
-        <div class="section-inner">
-          <p class="t-label" data-i18n="score.label">ERGEBNIS</p>
-          <h2 class="lead" data-i18n="score.title">T1T SCORE</h2>
-          <figure class="wordplay" aria-hidden="true">
-            <div class="wp-host">T1TCORE</div>
-            <div class="wp-score"><span class="s">S</span>CORE</div>
-          </figure>
-          <p class="t-body" data-i18n="score.wordplay">In T1TCORE steckt SCORE.</p>
-          <p class="t-body" data-i18n="score.body">Drei Stufen. Ein Wert. Klar und sichtbar.</p>
-
-          <div class="example">
-            <p class="t-label" data-i18n="score.example">Beispiel</p>
-            <p class="example-hint" data-i18n="score.hint">Tippen für ein Beispiel</p>
-            <button type="button" class="example-row" data-score-val="80" data-i18n-aria="score.hint1">
-              <span data-i18n="score.n1">VERTRAUEN</span>
-              <span class="val-wrap">
-                <span class="val-tag" data-i18n="score.example">Beispiel</span>
-                <span class="val" data-score-num></span>
-              </span>
-            </button>
-            <button type="button" class="example-row" data-score-val="70" data-i18n-aria="score.hint2">
-              <span data-i18n="score.n2">RELEVANZ</span>
-              <span class="val-wrap">
-                <span class="val-tag" data-i18n="score.example">Beispiel</span>
-                <span class="val" data-score-num></span>
-              </span>
-            </button>
-            <button type="button" class="example-row" data-score-val="90" data-i18n-aria="score.hint3">
-              <span data-i18n="score.n3">ECHT</span>
-              <span class="val-wrap">
-                <span class="val-tag" data-i18n="score.example">Beispiel</span>
-                <span class="val" data-score-num></span>
-              </span>
-            </button>
-          </div>
-          <p class="example-note" data-i18n="score.ph">Die Werte oben dienen nur zur Darstellung. Echte T1T SCORE Werte folgen.</p>
-
-          <div class="cases">
-            <p class="t-label" data-i18n="cases.label">BEISPIELE AUS PROJEKTEN</p>
-            <article class="case">
-              <h3 class="case-name">MegaClean</h3>
-              <p class="t-body" data-i18n="case.mc.text">Berliner Familienunternehmen für Reinigung und Objektservice. Geprüft: Leistungen, Einsatzgebiet und häufige Fragen, abgestimmt mit dem Unternehmen, für einen klaren One-Pager.</p>
-              <!-- Score-Zeile ausgeblendet bis Werte vorliegen: <p class="case-score"><span data-i18n="cases.score">T1T SCORE</span> <span class="placeholder-inline" data-i18n="cases.ph">[PLATZHALTER]</span></p> -->
-            </article>
-            <article class="case">
-              <h3 class="case-name">Quäntchen Glück e. V.</h3>
-              <p class="t-body" data-i18n="case.qg.text">Gemeinnütziger Verein. Geprüft: Texte, Kennzeichnung der Bilder und Lesbarkeit der neuen Website, abgestimmt mit dem Verein.</p>
-              <!-- Score-Zeile ausgeblendet bis Werte vorliegen: <p class="case-score"><span data-i18n="cases.score">T1T SCORE</span> <span class="placeholder-inline" data-i18n="cases.ph">[PLATZHALTER]</span></p> -->
-            </article>
-            <article class="case">
-              <h3 class="case-name">Gatherwynd</h3>
-              <p class="t-body" data-i18n="case.gw.text">Treffpunkt für Erwachsene, die eine Auszeit suchen. Geprüft: eine Website in drei Sprachen und eine Auswahl an Häusern, jedes auf seiner offiziellen Seite nachgesehen.</p>
-              <!-- Score-Zeile ausgeblendet bis Werte vorliegen: <p class="case-score"><span data-i18n="cases.score">T1T SCORE</span> <span class="placeholder-inline" data-i18n="cases.ph">[PLATZHALTER]</span></p> -->
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section niki-block" id="niki">
-        <div class="section-inner">
-          <p class="t-label" data-i18n="niki.label">NIKI</p>
-          <h2 class="lead" data-i18n="niki.line1">Natürliche Intelligenz und Künstliche Intelligenz im Einklang.</h2>
-          <p class="t-body" data-i18n="niki.line2">Der Mensch hat das letzte Wort.</p>
-        </div>
-      </section>
-
-      <section class="section place-block" id="raum">
-        <div class="section-inner">
-          <p class="t-label" data-i18n="place.label">RAUM</p>
-          <p class="t-body" data-i18n="place.body">Für Unternehmen, Selbstständige und Marken im Raum Deggendorf.</p>
-          <p class="place-line" data-i18n="place.line">Gestartet in Deggendorf. Gedacht für die Welt.</p>
-        </div>
-      </section>
-
-      <section class="section x-block" id="x-aktuell">
-        <div class="section-inner">
-          <p class="t-label" data-i18n="xpost.label">AKTUELL AUF X</p>
-          <script type="application/json" id="t1t-posts">
-{"account":{"name":"T1T Core","username":"T1TCORE","url":"https://x.com/T1TCORE"},"post":{"id":"2122321446517309802","url":"https://x.com/T1TCORE/status/2122321446517309802","created_at":"2026-11-16T13:30:38.000Z","created_at_berlin":"16.11.2026, 14:30","lang":"de","text":"Plattformen kennen deine Trigger besser als du dich selbst. Aber Vorhersage ist nicht Verständnis.\nSignal ist das, was dir dient. Rauschen das, was dich bindet.\nTRUST ist der Filter dazwischen.\n\nBild KI-generiert.\n\n#T1TCore #SignalStattRauschen","image":{"webp":"assets/x/trust-filter-cd-a-1080x1440.webp","webp_small":"assets/x/trust-filter-cd-a-720x960.webp","jpg":"assets/x/trust-filter-cd-a-1080x1440.jpg","width":1080,"height":1440,"alt":"TRUST IST DER FILTER. Rauschen links verdichtet sich an einer senkrechten Linie zu einer klaren weißen Linie. VERTRAUEN · RELEVANZ · ECHT. T1T Core. Gestartet in Deggendorf. Gedacht für die Welt.","alt_de":"TRUST IST DER FILTER. Rauschen links verdichtet sich an einer senkrechten Linie zu einer klaren weißen Linie. VERTRAUEN · RELEVANZ · ECHT. T1T Core. Gestartet in Deggendorf. Gedacht für die Welt.","alt_en":"Graphic with the headline TRUST is the filter. Noise on the left condenses at a vertical line into one clear white line. Trust · Relevance · Real. T1T Core. Started in Deggendorf. Meant for the world."},"date_de":"16.11.2026, 14:30","date_en":"16 Nov 2026, 14:30","summary_en":"Platforms know your triggers better than you know yourself. But prediction is not understanding. Signal is what serves you, noise is what binds you. TRUST is the filter in between. AI-generated image."}}
-          </script>
-          <article class="x-card" id="x-card">
-            <p class="x-card-meta">
-              <a class="x-card-who" href="https://x.com/T1TCORE" target="_blank" rel="noopener noreferrer">@T1TCORE</a>
-              <time datetime="2026-11-16T13:30:38.000Z" data-date-de="16.11.2026, 14:30" data-date-en="16 Nov 2026, 14:30">16.11.2026, 14:30</time>
-            </p>
-            <figure class="x-card-media">
-              <picture>
-                <source type="image/webp" srcset="assets/x/trust-filter-cd-a-720x960.webp 720w, assets/x/trust-filter-cd-a-1080x1440.webp 1080w" sizes="(min-width: 640px) 34rem, 100vw" />
-                <img src="assets/x/trust-filter-cd-a-1080x1440.jpg" width="1080" height="1440" loading="lazy" decoding="async" alt="TRUST IST DER FILTER. Rauschen links verdichtet sich an einer senkrechten Linie zu einer klaren weißen Linie. VERTRAUEN · RELEVANZ · ECHT. T1T Core. Gestartet in Deggendorf. Gedacht für die Welt." data-alt-de="TRUST IST DER FILTER. Rauschen links verdichtet sich an einer senkrechten Linie zu einer klaren weißen Linie. VERTRAUEN · RELEVANZ · ECHT. T1T Core. Gestartet in Deggendorf. Gedacht für die Welt." data-alt-en="Graphic with the headline TRUST is the filter. Noise on the left condenses at a vertical line into one clear white line. Trust · Relevance · Real. T1T Core. Started in Deggendorf. Meant for the world." />
-              </picture>
-            </figure>
-            <p class="x-card-text" lang="de">Plattformen kennen deine Trigger besser als du dich selbst. Aber Vorhersage ist nicht Verständnis.
-Signal ist das, was dir dient. Rauschen das, was dich bindet.
-TRUST ist der Filter dazwischen.
-
-Bild KI-generiert.
-
-#T1TCore #SignalStattRauschen</p>
-            <p class="x-card-summary" lang="en" hidden><span class="x-card-summary-label">In English</span> Platforms know your triggers better than you know yourself. But prediction is not understanding. Signal is what serves you, noise is what binds you. TRUST is the filter in between. AI-generated image.</p>
-            <a class="x-card-link" href="https://x.com/T1TCORE/status/2122321446517309802" target="_blank" rel="noopener noreferrer" data-i18n="xpost.read">Auf X lesen</a>
-          </article>
-          <p class="x-card-note" data-i18n="xpost.note">Ohne X-Skript. Der Text liegt auf dieser Seite. Der Link führt zu X.</p>
-        </div>
-      </section>
-
-      <section class="cta" id="anfrage">
-        <!-- Kontakt auf der Startseite nur über X, Freigabe Thomas 12.11.2026 15:22. Vorschau 16.11.2026: X-DM mit vorbereitetem Text. -->
-        <p class="t-label" data-i18n="ask.label">ANFRAGE</p>
-        <h2 class="lead cta-lead" data-i18n="ask.lead">Schreib direkt auf X.</h2>
-        <p class="t-body" data-i18n="ask.body">Der Button öffnet eine Nachricht an @T1TCORE mit vorbereitetem Text. Du ergänzt nur deine Marke.</p>
-        <div class="cta-buttons">
-          <a class="btn btn-accent" data-dm href="https://x.com/messages/compose?recipient_id=2050408646815715328&amp;text=Hallo%20T1T%20CORE%2C%20ich%20m%C3%B6chte%20eine%20TRUST%20Analyse%20f%C3%BCr%20meine%20Marke%20anfragen.%20Marke%3A%20%E2%80%A6%20Website%20oder%20Profil%3A%20%E2%80%A6" target="_blank" rel="noopener noreferrer" data-i18n="ask.dm" data-i18n-aria="ask.dmaria" aria-label="Analyse anfragen · öffnet eine Nachricht an @T1TCORE auf X">Analyse anfragen</a>
-          <a class="btn btn-ghost" data-i18n="cta.button" href="https://x.com/T1TCORE" target="_blank" rel="noopener noreferrer">Kontakt über X</a>
-        </div>
-        <p class="t-body cta-note" data-i18n="cta.note">Ein kurzes Schreiben reicht.</p>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <p>
-          <a class="x-link x-link-foot" href="https://x.com/T1TCORE" target="_blank" rel="noopener noreferrer me">x.com/T1TCORE</a>
-        </p>
-        <p>
-          <span data-i18n="footer.init">Initiative von Thomas Malyska</span>
-          <span aria-hidden="true"> · </span>
-          <span data-i18n="footer.foto">dargestellt von Fotomek</span>
-        </p>
-        <p>
-          <a href="impressum.html" data-i18n="footer.imp">Impressum</a>
-          <span aria-hidden="true"> · </span>
-          <a href="datenschutz.html" data-i18n="footer.dat">Datenschutz</a>
-        </p>
-      </div>
-    </footer>
-
-    <script src="assets/main.js"></script>
-  </body>
+<section class="sec trustbar" aria-label="WORAUF DU DICH VERLASSEN KANNST">
+  <p class="label">WORAUF DU DICH VERLASSEN KANNST</p>
+  <ul class="tb"><li><svg viewBox="0 0 24 24" aria-hidden="true" class="ti"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><strong>Persönlich geprüft</strong><span>Von Thomas Malyska, jedes Ergebnis.</span></div></li><li><svg viewBox="0 0 24 24" aria-hidden="true" class="ti"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg><div><strong>NIKI Prinzip</strong><span>Mensch und Maschine. Der Mensch entscheidet.</span></div></li><li><svg viewBox="0 0 24 24" aria-hidden="true" class="ti"><path d="M4 20h16"/><path d="M6 16v-3M10 16v-6M14 16v-4M18 16V7"/></svg><div><strong>Ehrlicher Zeitplan</strong><span>3 Tage bis zum Ergebnis.</span></div></li><li><svg viewBox="0 0 24 24" aria-hidden="true" class="ti"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 10h8M8 13h5"/></svg><div><strong>Direkter Kontakt</strong><span>Über X · @T1TCORE.</span></div></li></ul>
+</section>
+</main>
+<footer class="foot">
+  <img src="assets/logo/t1t-core-logo-weiss.svg" width="969" height="142" alt="T1T CORE" class="foot-logo">
+  <p>Initiative, Foundation in Planung</p>
+  <p>Gestartet in Deggendorf. Gedacht für die Welt.</p>
+  <p class="foot-links"><a href="https://x.com/T1TCORE" target="_blank" rel="noopener noreferrer">x.com/T1TCORE</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+  <p class="foot-prev">Vorschau · nicht veröffentlicht</p>
+</footer>
+</body>
 </html>

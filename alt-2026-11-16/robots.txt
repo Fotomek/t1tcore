@@ -1,0 +1,5 @@
+# T1T Core. Basis https://t1tcore.com/
+User-agent: *
+Allow: /
+
+Sitemap: https://t1tcore.com/sitemap.xml
