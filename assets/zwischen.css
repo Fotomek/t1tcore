@@ -1,0 +1,13 @@
+/* T1T CORE · ruhige Zwischenelemente zwischen den Themen · Vorschau 19.11.2026 */
+.zb{max-width:1180px;margin:0 auto;padding:48px 22px 0;border-top:1px solid var(--line)}
+.zb img{display:block;width:100%;height:auto;aspect-ratio:3/1}
+.zb+.sec,.zb+.statement{border-top:0;padding-top:32px}
+@media (min-width:900px){
+ .zb{padding:72px 48px 0}
+ .zb img{max-width:780px}
+ .zb-5 img{margin:0 auto}
+ .zb+.sec,.zb+.statement{padding-top:48px}
+}
+/* Fix: lange Woerter wie MARKTWIRKLICHKEIT brechen auf kleinen Handys nicht mehr mitten im Wort um */
+@media (max-width:480px){.sec h2{font-size:7.1vw}}
+@media (max-width:360px){body .sec h2{font-size:7vw}}
